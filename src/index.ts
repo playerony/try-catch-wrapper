@@ -3,40 +3,45 @@
  */
 
 /**
- * Calculate the average of three numbers
+ * try-catch wrapper for synchronous functions
  *
- * @param a - first number
- * @param b - second number
- * @param c - third number
+ * @param toExecute - synchronous function to execute inside of try-catch
+ * @param onError - synchronous function to execute when an error occurs
  *
  * @public
  */
-export function avg(a: number, b: number, c: number): number {
-  return sum3(a, b, c) / 3;
-}
+export const tryCatchWrapper = <TData = unknown, TError = unknown>(
+  toExecute: () => TData,
+  onError?: (error: TError) => void,
+): TData | void => {
+  try {
+    return toExecute();
+  } catch (error: unknown) {
+    if (onError) {
+      // @ts-expect-error
+      onError(error);
+    }
+  }
+};
 
 /**
- * Calculate the sum of three numbers
+ * try-catch wrapper for asynchronous functions
  *
- * @param a - first number
- * @param b - second number
- * @param c - third number
+ * @param toExecute - asynchronous function to execute inside of try-catch
+ * @param onError - asynchronous function to execute when an error occurs
  *
- * @beta
+ * @public
  */
-export function sum3(a: number, b: number, c: number): number {
-  return sum2(a, sum2(b, c));
-}
-
-/**
- * Calculate the sum of two numbers
- *
- * @param a - first number
- * @param b - second number
- *
- * @internal
- */
-export function sum2(a: number, b: number): number {
-  const sum = a + b;
-  return sum;
-}
+export const asyncTryCatchWrapper = async <TData = unknown, TError = unknown>(
+  toExecute: () => Promise<TData>,
+  onError?: (error: TError) => void,
+): Promise<TData | void> => {
+  try {
+    return await toExecute();
+  } catch (error: unknown) {
+    if (onError) {
+      // @ts-expect-error
+      onError(error);
+    }
+  }
+};

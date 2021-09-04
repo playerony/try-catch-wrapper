@@ -1,21 +1,39 @@
-import { avg, sum3 } from '..';
+import { tryCatchWrapper, asyncTryCatchWrapper } from '..';
 
-describe('avg should calculate an average properly', () => {
-  test('three positive numbers', () => {
-    expect(avg(3, 4, 5)).toBe(4);
+describe('tryCatchWrapper Function', () => {
+  it('should call onError callback when an error occurs', () => {
+    const func = () => {
+      throw new Error('test error');
+    };
+
+    const onError = jest.fn();
+    tryCatchWrapper(func, onError);
+
+    expect(onError).toHaveBeenCalled();
   });
 
-  test('three negative numbers', () => {
-    expect(avg(3, -4, -5)).toBe(-2);
+  it('should call passed function when an error does not occur', () => {
+    const func = () => 5;
+
+    expect(tryCatchWrapper(func)).toEqual(5);
   });
 });
 
-describe('sum3 should calculate a sum properly', () => {
-  test('three positive numbers', () => {
-    expect(sum3(3, 4, 5)).toBe(12);
+describe('asyncTryCatchWrapper Function', () => {
+  it('should call onError callback when an error occurs', () => {
+    const func = () => {
+      throw new Error('test error');
+    };
+
+    const onError = jest.fn();
+    asyncTryCatchWrapper(func, onError);
+
+    expect(onError).toHaveBeenCalled();
   });
 
-  test('three negative numbers', () => {
-    expect(sum3(3, -4, -5)).toBe(-6);
+  it('should call passed function when an error does not occur', async () => {
+    const toExecute = async () => Promise.resolve(10);
+
+    await expect(asyncTryCatchWrapper(toExecute)).resolves.toEqual(10);
   });
 });

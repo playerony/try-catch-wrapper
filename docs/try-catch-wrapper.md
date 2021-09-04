@@ -6,10 +6,10 @@
 
 A small library for common math functions
 
-## Functions
+## Variables
 
-|  Function | Description |
+|  Variable | Description |
 |  --- | --- |
-|  [avg(a, b, c)](./try-catch-wrapper.avg.md) | Calculate the average of three numbers |
-|  [sum3(a, b, c)](./try-catch-wrapper.sum3.md) | <b><i>(BETA)</i></b> Calculate the sum of three numbers |
+|  [asyncTryCatchWrapper](./try-catch-wrapper.asynctrycatchwrapper.md) | Calculate the average of three numbers |
+|  [tryCatchWrapper](./try-catch-wrapper.trycatchwrapper.md) | try-catch wrapper for synchronous functions |
 
