@@ -1,5 +1,5 @@
 /**
- * @packageDocumentation A small library for common math functions
+ * @packageDocumentation Functional try-catch wrapper.
  */
 
 /**
