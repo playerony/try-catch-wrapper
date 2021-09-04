@@ -8,8 +8,7 @@ A small library for common math functions
 
 ## Variables
 
-|  Variable | Description |
-|  --- | --- |
-|  [asyncTryCatchWrapper](./try-catch-wrapper.asynctrycatchwrapper.md) | Calculate the average of three numbers |
-|  [tryCatchWrapper](./try-catch-wrapper.trycatchwrapper.md) | try-catch wrapper for synchronous functions |
-
+| Variable                                                            | Description                                 |
+| ------------------------------------------------------------------- | ------------------------------------------- |
+| [asyncTryCatchWrapper](./try-catch-wrapper.asynctrycatchwrapper.md) | Calculate the average of three numbers      |
+| [tryCatchWrapper](./try-catch-wrapper.trycatchwrapper.md)           | try-catch wrapper for synchronous functions |

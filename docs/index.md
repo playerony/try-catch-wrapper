@@ -6,7 +6,6 @@
 
 ## Packages
 
-|  Package | Description |
-|  --- | --- |
-|  [try-catch-wrapper](./try-catch-wrapper.md) | A small library for common math functions |
-
+| Package                                     | Description                               |
+| ------------------------------------------- | ----------------------------------------- |
+| [try-catch-wrapper](./try-catch-wrapper.md) | A small library for common math functions |
