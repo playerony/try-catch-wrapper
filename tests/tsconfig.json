@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "references": [
+    {
+      "path": "..",
+      "name": "try-catch-wrapper"
+    }
+  ],
+  "compilerOptions": {
+    "noEmit": true,
+    "rootDir": "..",
+    "types": ["jest"]
+  },
+  "include": ["."]
+}
