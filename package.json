@@ -1,6 +1,6 @@
 {
   "name": "@playerony/try-catch-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Functional try-catch wrapper.",
   "license": "MIT",
   "author": "Paweł Wojtasiński",
@@ -53,6 +53,13 @@
     "rimraf": "^3.0.2",
     "typescript": "^4.3.5"
   },
+  "keywords": [
+    "javascript",
+    "react-try-catch",
+    "try-catch",
+    "try-catch-wrapper",
+    "typescript"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -65,12 +72,5 @@
   "volta": {
     "node": "14.17.4",
     "yarn": "1.22.11"
-  },
-  "keywords": [
-    "try-catch",
-    "javascript",
-    "typescript",
-    "react-try-catch",
-    "try-catch-wrapper"
-  ]
+  }
 }
